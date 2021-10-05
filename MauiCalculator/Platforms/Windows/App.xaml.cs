@@ -5,7 +5,7 @@ using Windows.ApplicationModel;
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
-namespace MauiCalculator.WinUI
+namespace MauiApp1.WinUI
 {
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
@@ -21,7 +21,7 @@ namespace MauiCalculator.WinUI
             this.InitializeComponent();
         }
 
-        protected override IStartup OnCreateStartup() => new Startup();
+        protected override MauiApp CreateMauiApp() => MauiProgram.CreateMauiApp();
 
         protected override void OnLaunched(LaunchActivatedEventArgs args)
         {
