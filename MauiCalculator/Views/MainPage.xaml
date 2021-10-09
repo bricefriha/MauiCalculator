@@ -9,11 +9,14 @@
                 <Setter Property="FontFamily"
                         Value="OpenSansRegular" />
                 <Setter Property="CornerRadius"
-                        Value="20" />
+                        Value="50" />
+                <Setter Property="Margin"
+                        Value="5" />
+
                 <Setter Property="HorizontalOptions"
-                        Value="Fill" />
+                        Value="Center" />
                 <Setter Property="VerticalOptions"
-                        Value="Fill" />
+                        Value="Center" />
                 <Setter Property="BackgroundColor"
                         Value="#383434" />
             </Style>
@@ -22,18 +25,20 @@
                 <Setter Property="FontFamily"
                         Value="SolidIcon" />
                 <Setter Property="CornerRadius"
-                        Value="20" />
+                        Value="50" />
+                <Setter Property="Margin"
+                        Value="5" />
                 <Setter Property="HorizontalOptions"
-                        Value="Fill" />
+                        Value="Center" />
                 <Setter Property="VerticalOptions"
-                        Value="Fill" />
+                        Value="Center" />
                 <Setter Property="BackgroundColor"
                         Value="#383434" />
             </Style>
             <Style TargetType="Label"
                    x:Key="TextButton">
                 <Setter Property="FontSize"
-                        Value="20" />
+                        Value="50" />
                 <Setter Property="FontAttributes"
                         Value="Bold" />
                 <Setter Property="HorizontalOptions"
@@ -73,6 +78,7 @@
                 <Button CornerRadius="50"
                         Grid.Column="0"
                         Grid.Row="0"
+                        BackgroundColor="{StaticResource ActionButtonColour}"
                         Style="{DynamicResource Button}"
                         Text="AC"
                         />
@@ -80,15 +86,16 @@
                 <!-- C -->
                 <Button Grid.Column="1"
                         Grid.Row="0"
+                        BackgroundColor="{StaticResource ActionButtonColour}"
                         Style="{DynamicResource Button}" 
                         Text="C"/>
 
                 <!-- % -->
                 <Button Grid.Column="2"
                         Grid.Row="0"
+                        BackgroundColor="{StaticResource ActionButtonColour}"
                         Style="{DynamicResource ButtonIcon}"
-                        Text="&#xf541;"
-                        TextColor="DarkSlateGray" />
+                        Text="&#xf541;" />
 
                 <!-- Numbers -->
                 <!---->
@@ -134,9 +141,11 @@
                         Style="{DynamicResource Button}"
                         Text="3" />
                 <!-- Fourth row -->
-                <Button Grid.Column="1"
+                <Button Grid.Column="0"
                         Grid.Row="4"
+                        Grid.ColumnSpan="2"
                         Style="{DynamicResource Button}"
+                        HorizontalOptions="Fill"
                         Text="0" />
 
                 <!-- Operators -->
@@ -146,12 +155,14 @@
                         Grid.Column="3"
                         Grid.Row="0"
                         Style="{DynamicResource ButtonIcon}"
+                        BackgroundColor="{StaticResource ActionButtonColour}"
                         Text="&#xf529;"
                         FontFamily="SolidIcon"/>
                 <!-- time -->
                 <Button Grid.Column="3"
                         Grid.Row="1"
                         Style="{DynamicResource ButtonIcon}"
+                        BackgroundColor="{StaticResource ActionButtonColour}"
                         Text="&#xf00d;"
                         FontFamily="SolidIcon" />
                 <!-- Minus -->
@@ -159,11 +170,13 @@
                            Grid.Row="2"
                         Style="{DynamicResource ButtonIcon}"
                         Text="&#xf068;"
+                        BackgroundColor="{StaticResource ActionButtonColour}"
                         FontFamily="SolidIcon" />
                 <!-- Plus -->
                 <Button Grid.Column="3"
                            Grid.Row="3"
                         Style="{DynamicResource ButtonIcon}"
+                        BackgroundColor="{StaticResource ActionButtonColour}"
                         Text="&#xf067;"
                         FontFamily="SolidIcon" />
 
@@ -171,13 +184,14 @@
                 <!---->
                 <!--Dot-->
                 <Button Grid.Column="2"
-                           Grid.ColumnSpan="2"
-                           Grid.Row="4"
+                        Grid.Row="4"
+                        BackgroundColor="{StaticResource ActionButtonColour}"
                         Style="{DynamicResource ButtonIcon}"
                         Text="."/>
                 <!-- Equals -->
-                <Button Grid.Column="0"
+                <Button Grid.Column="3"
                            Grid.Row="4"
+                        BackgroundColor="{StaticResource AccentColour}"
                         Style="{DynamicResource ButtonIcon}"
                         Text="&#xf52c;"
                         FontFamily="SolidIcon" />
