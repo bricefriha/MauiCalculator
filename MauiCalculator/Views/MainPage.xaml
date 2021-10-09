@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiCalculator.Views.MainPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Button"
+                   x:Key="Button">
+                <Setter Property="FontFamily"
+                        Value="OpenSansRegular" />
+                <Setter Property="CornerRadius"
+                        Value="20" />
+                <Setter Property="HorizontalOptions"
+                        Value="Fill" />
+                <Setter Property="VerticalOptions"
+                        Value="Fill" />
+                <Setter Property="BackgroundColor"
+                        Value="#383434" />
+            </Style>
+            <Style TargetType="Button"
+                   x:Key="ButtonIcon">
+                <Setter Property="FontFamily"
+                        Value="SolidIcon" />
+                <Setter Property="CornerRadius"
+                        Value="20" />
+                <Setter Property="HorizontalOptions"
+                        Value="Fill" />
+                <Setter Property="VerticalOptions"
+                        Value="Fill" />
+                <Setter Property="BackgroundColor"
+                        Value="#383434" />
+            </Style>
+            <Style TargetType="Label"
+                   x:Key="TextButton">
+                <Setter Property="FontSize"
+                        Value="20" />
+                <Setter Property="FontAttributes"
+                        Value="Bold" />
+                <Setter Property="HorizontalOptions"
+                        Value="Center" />
+                <Setter Property="VerticalOptions"
+                        Value="Center" />
+                <Setter Property="TextColor"
+                        Value="Black" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+
+        <Grid BackgroundColor="AliceBlue">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="1.5*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="1"
+                  BackgroundColor="#e3edf7"
+                  Padding="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- AC -->
+                <Button CornerRadius="50"
+                        Grid.Column="0"
+                        Grid.Row="0"
+                        Style="{DynamicResource Button}"
+                        Text="AC"
+                        />
+
+                <!-- C -->
+                <Button Grid.Column="1"
+                        Grid.Row="0"
+                        Style="{DynamicResource Button}" 
+                        Text="C"/>
+
+                <!-- % -->
+                <Button Grid.Column="2"
+                        Grid.Row="0"
+                        Style="{DynamicResource ButtonIcon}"
+                        Text="&#xf541;"
+                        TextColor="DarkSlateGray" />
+
+                <!-- Numbers -->
+                <!---->
+                <!-- First row -->
+                <Button Grid.Column="0"
+                        Grid.Row="1"
+                        Style="{DynamicResource Button}" 
+                        Text="7"/>
+                <Button Grid.Column="1"
+                        Grid.Row="1"
+                        Style="{DynamicResource Button}"
+                        Text="8" />
+                <Button Grid.Column="2"
+                        Grid.Row="1"
+                        Style="{DynamicResource Button}"
+                        Text="9" />
+                <!-- Second row -->
+                <Button Grid.Column="0"
+                        Grid.Row="2"
+                        Style="{DynamicResource Button}" 
+                        Text="4" />
+
+                <Button Grid.Column="1"
+                        Grid.Row="2"
+                        Style="{DynamicResource Button}"
+                        Text="5" />
+
+                <Button Grid.Column="2"
+                        Grid.Row="2"
+                        Style="{DynamicResource Button}" 
+                        Text="6" />
+                <!-- Third row -->
+                <Button Grid.Column="0"
+                        Grid.Row="3"
+                        Style="{DynamicResource Button}"
+                        Text="1" />
+                <Button Grid.Column="1"
+                        Grid.Row="3"
+                        Style="{DynamicResource Button}"
+                        Text="2" />
+                <Button Grid.Column="2"
+                        Grid.Row="3"
+                        Style="{DynamicResource Button}"
+                        Text="3" />
+                <!-- Fourth row -->
+                <Button Grid.Column="1"
+                        Grid.Row="4"
+                        Style="{DynamicResource Button}"
+                        Text="0" />
+
+                <!-- Operators -->
+
+                <!-- Divide -->
+                <Button CornerRadius="50"
+                        Grid.Column="3"
+                        Grid.Row="0"
+                        Style="{DynamicResource ButtonIcon}"
+                        Text="&#xf529;"
+                        FontFamily="SolidIcon"/>
+                <!-- time -->
+                <Button Grid.Column="3"
+                        Grid.Row="1"
+                        Style="{DynamicResource ButtonIcon}"
+                        Text="&#xf00d;"
+                        FontFamily="SolidIcon" />
+                <!-- Minus -->
+                <Button Grid.Column="3"
+                           Grid.Row="2"
+                        Style="{DynamicResource ButtonIcon}"
+                        Text="&#xf068;"
+                        FontFamily="SolidIcon" />
+                <!-- Plus -->
+                <Button Grid.Column="3"
+                           Grid.Row="3"
+                        Style="{DynamicResource ButtonIcon}"
+                        Text="&#xf067;"
+                        FontFamily="SolidIcon" />
+
+                <!-- Other controls -->
+                <!---->
+                <!--Dot-->
+                <Button Grid.Column="2"
+                           Grid.ColumnSpan="2"
+                           Grid.Row="4"
+                        Style="{DynamicResource ButtonIcon}"
+                        Text="."/>
+                <!-- Equals -->
+                <Button Grid.Column="0"
+                           Grid.Row="4"
+                        Style="{DynamicResource ButtonIcon}"
+                        Text="&#xf52c;"
+                        FontFamily="SolidIcon" />
+
+
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

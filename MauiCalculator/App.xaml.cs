@@ -1,9 +1,10 @@
-﻿using Microsoft.Maui;
+﻿using MauiCalculator.Views;
+using Microsoft.Maui;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Controls.PlatformConfiguration.WindowsSpecific;
 using Application = Microsoft.Maui.Controls.Application;
 
-namespace MauiApp1
+namespace MauiCalculator
 {
     public partial class App : Application
     {

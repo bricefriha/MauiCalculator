@@ -1,7 +1,7 @@
 ﻿using Foundation;
 using Microsoft.Maui;
 
-namespace MauiApp1
+namespace MauiCalculator
 {
     [Register("AppDelegate")]
     public class AppDelegate : MauiUIApplicationDelegate

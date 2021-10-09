@@ -2,7 +2,7 @@
 using Microsoft.Maui.Essentials;
 using System;
 
-namespace MauiApp1
+namespace MauiCalculator.Views
 {
     public partial class MainPage : ContentPage
     {
@@ -11,14 +11,8 @@ namespace MauiApp1
         public MainPage()
         {
             InitializeComponent();
+
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
-        {
-            count++;
-            CounterLabel.Text = $"Current count: {count}";
-
-            SemanticScreenReader.Announce(CounterLabel.Text);
-        }
     }
 }

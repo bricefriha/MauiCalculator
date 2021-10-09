@@ -3,7 +3,7 @@ using Android.Runtime;
 using Microsoft.Maui;
 using System;
 
-namespace MauiApp1
+namespace MauiCalculator
 {
     [Application]
     public class MainApplication : MauiApplication

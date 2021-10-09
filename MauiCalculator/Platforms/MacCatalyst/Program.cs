@@ -1,6 +1,6 @@
 ﻿using UIKit;
 
-namespace MauiApp1
+namespace MauiCalculator
 {
     public class Program
     {
