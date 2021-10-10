@@ -62,6 +62,27 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="1.5*" />
             </Grid.RowDefinitions>
+            <ScrollView Grid.Row="0">
+                <Grid Grid.RowDefinitions="*,50">
+                    <CollectionView ItemsSource="{Binding CurrentLine}"
+                                    ItemsLayout="HorizontalList"
+                                    
+                                    Grid.Row="1">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Label Text="{Binding Content}"
+                                       VerticalTextAlignment="Center"
+                                       VerticalOptions="End"
+                                       FontFamily="{Binding Font}"
+                                       FontSize="{Binding FontSize}"
+                                       />
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+
+                    </CollectionView>
+                </Grid>
+            </ScrollView>
+            <!-- Keyboard -->
             <Grid Grid.Row="1"
                   BackgroundColor="#383434"
                   Padding="5">
@@ -107,49 +128,69 @@
                 <!-- First row -->
                 <Button Grid.Column="0"
                         Grid.Row="1"
-                        Style="{DynamicResource Button}" 
+                        Style="{DynamicResource Button}"
+                        Command="{Binding AddNumber}"
+                        CommandParameter="7"
                         Text="7"/>
                 <Button Grid.Column="1"
                         Grid.Row="1"
                         Style="{DynamicResource Button}"
+                        Command="{Binding AddNumber}"
+                        CommandParameter="8"
                         Text="8" />
                 <Button Grid.Column="2"
                         Grid.Row="1"
                         Style="{DynamicResource Button}"
+                        Command="{Binding AddNumber}"
+                        CommandParameter="9"
                         Text="9" />
                 <!-- Second row -->
                 <Button Grid.Column="0"
                         Grid.Row="2"
-                        Style="{DynamicResource Button}" 
+                        Style="{DynamicResource Button}"
+                        Command="{Binding AddNumber}"
+                        CommandParameter="4"
                         Text="4" />
 
                 <Button Grid.Column="1"
                         Grid.Row="2"
                         Style="{DynamicResource Button}"
+                        Command="{Binding AddNumber}"
+                        CommandParameter="5"
                         Text="5" />
 
                 <Button Grid.Column="2"
                         Grid.Row="2"
-                        Style="{DynamicResource Button}" 
+                        Style="{DynamicResource Button}"
+                        Command="{Binding AddNumber}"
+                        CommandParameter="6"
                         Text="6" />
                 <!-- Third row -->
                 <Button Grid.Column="0"
                         Grid.Row="3"
                         Style="{DynamicResource Button}"
+                        Command="{Binding AddNumber}"
+                        CommandParameter="1"
                         Text="1" />
                 <Button Grid.Column="1"
                         Grid.Row="3"
                         Style="{DynamicResource Button}"
+                        Command="{Binding AddNumber}"
+                        CommandParameter="2"
                         Text="2" />
                 <Button Grid.Column="2"
                         Grid.Row="3"
                         Style="{DynamicResource Button}"
+                        Command="{Binding AddNumber}"
+                        CommandParameter="3"
                         Text="3" />
                 <!-- Fourth row -->
                 <Button Grid.Column="0"
                         Grid.Row="4"
                         Grid.ColumnSpan="2"
                         Style="{DynamicResource Button}"
+                        Command="{Binding AddNumber}"
+                        CommandParameter="0"
                         HorizontalOptions="Fill"
                         Text="0" />
 
@@ -162,18 +203,24 @@
                         Style="{DynamicResource ButtonIcon}"
                         BackgroundColor="{StaticResource ActionButtonColour}"
                         Text="&#xf529;"
+                        Command="{Binding AddOperator}"
+                        CommandParameter="&#xf529;"
                         FontFamily="SolidIcon"/>
                 <!-- time -->
                 <Button Grid.Column="3"
                         Grid.Row="1"
                         Style="{DynamicResource ButtonIcon}"
                         BackgroundColor="{StaticResource ActionButtonColour}"
+                        Command="{Binding AddOperator}"
+                        CommandParameter="&#xf00d;"
                         Text="&#xf00d;"
                         FontFamily="SolidIcon" />
                 <!-- Minus -->
                 <Button Grid.Column="3"
                            Grid.Row="2"
                         Style="{DynamicResource ButtonIcon}"
+                        Command="{Binding AddOperator}"
+                        CommandParameter="&#xf068;"
                         Text="&#xf068;"
                         BackgroundColor="{StaticResource ActionButtonColour}"
                         FontFamily="SolidIcon" />
@@ -183,6 +230,8 @@
                         Style="{DynamicResource ButtonIcon}"
                         BackgroundColor="{StaticResource ActionButtonColour}"
                         Text="&#xf067;"
+                        Command="{Binding AddOperator}"
+                        CommandParameter="&#xf067;"
                         FontFamily="SolidIcon" />
 
                 <!-- Other controls -->
@@ -192,10 +241,12 @@
                         Grid.Row="4"
                         BackgroundColor="{StaticResource ActionButtonColour}"
                         Style="{DynamicResource Button}"
+                        Command="{Binding AddNumber}"
+                        CommandParameter="."
                         Text="."/>
                 <!-- Equals -->
                 <Button Grid.Column="3"
-                           Grid.Row="4"
+                        Grid.Row="4"
                         BackgroundColor="{StaticResource AccentColour}"
                         Style="{DynamicResource ButtonIcon}"
                         Text="&#xf52c;"

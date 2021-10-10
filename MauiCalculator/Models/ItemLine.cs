@@ -13,6 +13,15 @@ namespace MauiCalculator.Models
     {
         public string Content { get; set; }
         public ItemType Type { get; set; }
+        public int FontSize
+        {
+            get
+            {
+                if (Type == ItemType.Operator)
+                    return 18;
+                return 25;
+            }
+        }
         public string Font 
         { 
             get 
