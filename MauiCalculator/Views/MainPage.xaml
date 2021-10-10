@@ -63,7 +63,7 @@
                 <RowDefinition Height="1.5*" />
             </Grid.RowDefinitions>
             <Grid Grid.Row="1"
-                  BackgroundColor="#e3edf7"
+                  BackgroundColor="#383434"
                   Padding="5">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
