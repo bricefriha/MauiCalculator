@@ -57,21 +57,49 @@
     </ContentPage.Resources>
     <ContentPage.Content>
 
-        <Grid BackgroundColor="AliceBlue">
+        <Grid >
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
                 <RowDefinition Height="1.5*" />
             </Grid.RowDefinitions>
             <ScrollView Grid.Row="0">
                 <Grid Grid.RowDefinitions="*,50">
+                    <CollectionView ItemsSource="{Binding History}"
+                                    ItemsLayout="VerticalList"
+                                    HorizontalOptions="EndAndExpand"
+                                    VerticalOptions="EndAndExpand"
+                                    Grid.Row="0">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <CollectionView ItemsSource="{Binding ItemLine}"
+                                                ItemsLayout="HorizontalList"
+                                                HorizontalOptions="EndAndExpand"
+                                                VerticalOptions="EndAndExpand"
+                                                Grid.Row="1">
+                                    <CollectionView.ItemTemplate>
+                                        <DataTemplate>
+                                            <Label Text="{Binding Content}"
+                                                   VerticalTextAlignment="End"
+                                                   VerticalOptions="End"
+                                                   FontFamily="{Binding Font}"
+                                                   FontSize="{Binding FontSize}" />
+                                        </DataTemplate>
+                                    </CollectionView.ItemTemplate>
+
+                                </CollectionView>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+
+                    </CollectionView>
                     <CollectionView ItemsSource="{Binding CurrentLine}"
                                     ItemsLayout="HorizontalList"
-                                    
+                                    HorizontalOptions="EndAndExpand"
+                                    VerticalOptions="EndAndExpand"
                                     Grid.Row="1">
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
                                 <Label Text="{Binding Content}"
-                                       VerticalTextAlignment="Center"
+                                       VerticalTextAlignment="End"
                                        VerticalOptions="End"
                                        FontFamily="{Binding Font}"
                                        FontSize="{Binding FontSize}"
@@ -250,7 +278,8 @@
                         BackgroundColor="{StaticResource AccentColour}"
                         Style="{DynamicResource ButtonIcon}"
                         Text="&#xf52c;"
-                        FontFamily="SolidIcon" />
+                        FontFamily="SolidIcon"
+                        Command="{Binding ShowResult}"/>
 
 
             </Grid>

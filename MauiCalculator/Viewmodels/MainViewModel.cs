@@ -12,12 +12,12 @@ namespace MauiCalculator.Viewmodels
 {
     public class MainViewModel : BaseViewModel
     {
-        private ObservableCollection<string> _history;
+        private ObservableCollection<ObservableCollection<ItemLine>> _history;
 
         /// <summary>
         /// Property that will keep all the previous opperations
         /// </summary>
-        public ObservableCollection<string> History
+        public ObservableCollection<ObservableCollection<ItemLine>> History
         {
             get { return _history; }
             set 
@@ -75,12 +75,29 @@ namespace MauiCalculator.Viewmodels
                 //OnPropertyChanged(nameof(AddOperator));
             }
         }
+        private Command _showResult;
+
+        public Command ShowResult
+        {
+            get 
+            { 
+                return _showResult; 
+            }
+            private set
+            {
+                _showResult = value;
+                //OnPropertyChanged(nameof(AddOperator));
+            }
+        }
 
 
 
         public MainViewModel()
         {
             _currentLine = new ObservableCollection<ItemLine>();
+
+            _history = new ObservableCollection<ObservableCollection<ItemLine>>();
+            History.Add(new ObservableCollection<ItemLine>());
 
             _addNumber = new Command((num) =>
             {
@@ -100,6 +117,14 @@ namespace MauiCalculator.Viewmodels
                         Content = op.ToString(), 
                         Type = ItemType.Operator
                     });
+            });
+            _showResult = new Command((num) =>
+            {
+                // Add the curent line to the history
+                History.Add(CurrentLine);
+
+                // Clear the current line
+                CurrentLine.Clear();
             });
         }
 
